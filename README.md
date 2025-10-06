@@ -21,7 +21,7 @@ Este proyecto está organizado como un **monorepo** con dos aplicaciones princip
 **Backend** API REST con datos locales, middlewares de logging y manejo de errores.
 **Frontend** Diseño responsive mobile-first con javascript.
 
-#Instalaciones:
+# Instalaciones:
 ### Backend
 ```bash
 cd backend
