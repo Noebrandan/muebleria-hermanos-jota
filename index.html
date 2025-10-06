@@ -1,0 +1,67 @@
+<!-- Página de Inicio (index.html):
+"Necesitamos que, al entrar al sitio, el cliente sienta nuestra calidad y diseño. Debe tener una imagen principal llamativa, nuestro logo, navegación clara y una sección que muestre nuestros productos más populares para captar el interés."
+- Un header con logo y barra de navegación.
+- Una sección principal o "Hero Banner".
+- Una sección de "Productos Destacados" con 3 o 4 productos cargados dinámicamente.
+- Un footer con información básica
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../Proyecto-Hermanos-Jota/img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="./css/style.css">
+    <!-- defer -->
+    <title>Inicio</title>
+</head>
+
+<body>
+    <header>
+        <img src="./img/logo.svg" alt="Logo de la empresa">
+        <nav>
+            <a href="#productos-destacados">Destacados</a>
+            <a href="./html/productos.html">Catálogo</a>
+            <a href="#footer">Medios de Contacto</a>
+            <a href="./html/contacto.html">Consultas</a>
+            <div class="carrito">
+                <img src="img/carrito-de-compras.png" alt="Carrito" class="cart-icon">
+                <span id="cart-count">0</span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="hero-banner">
+            <h1>Hermanos Jota</h1>
+            <p>Bienvenido a la excelencia en diseño</p>
+        </section>
+        <section>
+            <h2>Productos Destacados</h2>
+            <div id="productos-destacados">
+                <!-- Los productos se cargan aca con JS -->
+            </div>
+        </section>
+    </main>
+    <footer id="footer">
+        <!-- LINKS CONTACTO: -->
+        <p>Instagram: <a
+                href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=A31A00BDF54A53F0A2DB923974749C2E&f_hash=CC9E9E3D194900C1FA12077901117B48"
+                target="_blank" rel="noopener noreferrer">@hermanosjota_ba</a></p>
+
+        <p>mail general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+
+        <p> Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></p>
+
+        <p> WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></p>
+
+        <!-- COPYRIGHT -->
+        <p>© 2025 Hermanos Jota. Todos los derechos reservados.</p>
+
+    </footer>
+    <script src="./code/app.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,71 @@
+ 
+ Un error que encontré ---> Inicialmente un compañero hizo todo el js en ESPAÑOL, yo lo hice todo en inglés y ya hice todo lo de node.js. 
+ NO DA ERROR, pero si marca varias cosas para revisar. 
+ También quedaron cosas para arreglar del CSS.
+ 
+ 
+ Informe: Parte 1 (YO ME ENTIENDO, es una guía para entender que hice) 
+ 
+1.Servidor Express: Debe ser una aplicación
+construida con Express.js.
+
+-Crear una carpeta baceknd
+-Preparar node y ejecutar
+-Queda la carpeta (package.json)
+-Me quedaron 2 carpetas y no se porque cuando agregue dependencias y scrips <---- REVISAR
+- Puntos de entrada <--- server.js
+ 
+ PD: Seguí un tutorial de youtube pq no habia entendido, lo "concetar" una carpeta de node.js. 
+ Y me fue peor, volví a leer todo y los videos del campus y ya entendi.
+
+ En fin, instale un "node_module" y ahora no se si iba, según yo estaba agregando dependencias. Espero que ustedes vean a ver que tal.
+
+2.Fuente de Datos: Por ahora, los datos de los
+productos seguirán viviendo en un archivo .js
+local (un array de objetos), que será importado y
+utilizado por los controladores. No se requiere
+conexión a base de datos todavía.
+
+
+- Instale dependencias y creo que fue un error pero lo "solucioné" con (npm uninstall express cors dotenv)
+
+const index = productos.indexOf(producto); ---> Inicialmente usé este e investigando vi que era mejor usar IDs.
+
+-Faltan agregar datos de varios productos y unas cositas más.
+
+-module.exports = products;  ----> No olvidar agredar
+
+
+3.Endpoints de la API: Se deben implementar las
+siguientes rutas:
+GET /api/productos: Debe devolver el listado
+completo de productos en formato JSON.
+GET /api/productos/:id: Debe buscar un
+producto por su id en el array y devolver
+solo los datos de ese producto en formato
+JSON. Si no lo encuentra, debe devolver un
+error 404.
+
+- Rutas en (srd/route)
+
+-Situación: Funcionó desde el incio, pero me saltaba el firewall cuando lo ejecutaba en la terminal "npm nav" y al final usé chatgpt para ver que hacia mal 
+según no tengo nada mal y si tenia que salir lo que salía en el navegador.
+
+
+4. Middleware:
+Debe incluir un middleware global simple
+que haga console.log de cada petición que
+llega al servidor (método y URL).
+Debe usar el middleware incorporado
+express.json() para poder procesar futuras
+peticiones POST.
+
+
+5. Rutas y Errores:
+Las rutas de productos deben estar
+organizadas en su propio módulo usando
+express.Router.
+
+
+FALTA CONECTAR EL FRONTEND CON EL BACKEND.
+

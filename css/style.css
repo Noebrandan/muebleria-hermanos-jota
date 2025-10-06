@@ -1,0 +1,648 @@
+/* CSS: 
+- El diseño debe ser 100% responsivo(Mobile-First). 
+- Se debe utilizar Flexbox para la maquetación de las secciones principales. 
+- Todo el CSS debe estar en un archivo externo. */
+
+:root {
+    /* Colores principales según la paleta */
+    --siena-tostado: #A0522D;
+    /* Títulos principales */
+    --verde-salvia: #87A96B;
+    /* Acentos secundarios, sostenibilidad */
+    --alabastro-calido: #F5E6D3;
+    /* Fondos principales, fotografía */
+    --vara-oro: #D4A437;
+    /* Detalles premium, acentos */
+    --rosa-polvoriento: #C47A6D;
+    /* Acentos suaves, detalles femeninos */
+
+    /* Colores adicionales */
+    --blanco: #FFFFFF;
+    --gris-oscuro: #2C2C2C;
+    --gris-claro: #F8F8F8;
+
+    /* Tipografías */
+    --fuente-principal: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    --fuente-secundaria: 'Playfair Display', Georgia, serif;
+
+    /* Espaciados */
+    --espaciado-xs: 0.5rem;
+    --espaciado-sm: 1rem;
+    --espaciado-md: 1.5rem;
+    --espaciado-lg: 2rem;
+    --espaciado-xl: 3rem;
+
+    /* Bordes */
+    --border-radius: 8px;
+    --border-radius-lg: 12px;
+}
+
+/* RESET Y CONFIGURACIÓN BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    line-height: 1.6;
+    color: var(--gris-oscuro);
+    background-color: var(--alabastro-calido);
+}
+
+a {
+    text-decoration: none;
+}
+
+/* HEADER  */
+
+header {
+    background-color: rgba(245, 230, 211, 0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: var(--espaciado-sm) var(--espaciado-lg);
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img {
+    height: 50px;
+    width: auto;
+}
+
+nav {
+    display: flex;
+    gap: var(--espaciado-lg);
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--gris-oscuro);
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+nav a:hover {
+    color: var(--siena-tostado);
+}
+
+nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--siena-tostado);
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+/* MAIN CONTENT */
+main {
+    margin-top: 80px;
+    /* Espacio para el header fijo */
+    min-height: calc(100vh - 80px);
+}
+
+/* HERO BANNER */
+.hero-banner {
+    background: linear-gradient(135deg, var(--alabastro-calido) 0%, var(--verde-salvia) 100%);
+    padding: var(--espaciado-xl) var(--espaciado-lg);
+    text-align: center;
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-banner h1 {
+    font-family: var(--fuente-secundaria);
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: var(--siena-tostado);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin-bottom: var(--espaciado-md);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.hero-banner p {
+    font-size: 1.25rem;
+    color: var(--gris-oscuro);
+    font-weight: 300;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* SECCIÓN PRODUCTOS DESTACADOS */
+section {
+    padding: var(--espaciado-xl) var(--espaciado-lg);
+}
+
+section h2 {
+    font-family: var(--fuente-secundaria);
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--siena-tostado);
+    text-align: center;
+    margin-bottom: var(--espaciado-xl);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+#productos-destacados {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--espaciado-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* TARJETAS DE PRODUCTOS */
+.producto-card {
+    background-color: var(--rosa-polvoriento);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+}
+
+.producto-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.producto-card img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.producto-card:hover img {
+    transform: scale(1.05);
+}
+
+.producto-card h3 {
+    font-family: var(--fuente-secundaria);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--blanco);
+    padding: var(--espaciado-md);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.producto-card p {
+    color: var(--alabastro-calido);
+    padding: 0 var(--espaciado-md) var(--espaciado-md);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.producto-card ul {
+    list-style: none;
+    padding: 0 var(--espaciado-md) var(--espaciado-md);
+    margin: 0;
+}
+
+.producto-card li {
+    color: var(--alabastro-calido);
+    font-size: 0.9rem;
+    margin-bottom: var(--espaciado-xs);
+    padding-left: var(--espaciado-sm);
+    position: relative;
+}
+
+.producto-card li::before {
+    content: '•';
+    color: var(--vara-oro);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+}
+
+.producto-card li strong {
+    color: var(--blanco);
+    font-weight: 600;
+}
+
+#catalogo-productos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--espaciado-lg);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* DETALLE DE PRODUCTO */
+.detalle-contenedor {
+    display: flex;
+    align-items: flex-start;
+    /* Alinea arriba */
+    gap: 2rem;
+    /* Espacio entre imagen y texto */
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+.detalle-contenedor img {
+    width: 400px;
+    height: auto;
+    border-radius: var(--border-radius-lg);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.detalle-info {
+    flex: 1;
+}
+
+.detalle-info h1 {
+    font-family: var(--fuente-secundaria);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--siena-tostado);
+}
+
+.detalle-info p {
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+}
+
+.detalle-info ul {
+    list-style: none;
+    padding: 0;
+}
+
+.detalle-info li {
+    margin-bottom: 0.5rem;
+}
+
+/* FOOTER */
+footer {
+    background-color: var(--siena-tostado);
+    color: var(--alabastro-calido);
+    padding: var(--espaciado-xl) var(--espaciado-lg);
+    text-align: center;
+}
+
+footer p {
+    margin-bottom: var(--espaciado-sm);
+    font-size: 0.95rem;
+}
+
+footer a {
+    color: var(--vara-oro);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--blanco);
+    text-decoration: underline;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: var(--espaciado-sm);
+        padding: var(--espaciado-sm);
+    }
+
+    nav {
+        gap: var(--espaciado-md);
+    }
+
+    nav a {
+        font-size: 0.9rem;
+    }
+
+    .hero-banner h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero-banner p {
+        font-size: 1.1rem;
+    }
+
+    section h2 {
+        font-size: 2rem;
+    }
+
+    #productos-destacados {
+        grid-template-columns: 1fr;
+        gap: var(--espaciado-md);
+    }
+
+    .producto-card h3 {
+        font-size: 1.25rem;
+    }
+
+    #buscador-productos {
+        width: 100%;
+        /* en móviles que ocupe todo el ancho posible */
+        max-width: none;
+    }
+
+}
+
+/* FORMULARIO */
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 1rem;
+}
+
+#form-contacto {
+    width: 100%;
+    max-width: 500px;
+    background-color: #e2b7a5;
+    border-radius: 2rem;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+#form-contacto label {
+    font-weight: bold;
+    color: #7a3d15;
+    text-align: center;
+}
+
+#form-contacto input,
+#form-contacto textarea,
+#form-contacto button {
+    width: 100%;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1rem;
+}
+
+#form-contacto textarea {
+    min-height: 120px;
+    resize: none;
+    border-radius: 1rem;
+}
+
+#form-contacto button {
+    background-color: #f4efe9;
+    color: #7a3d15;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#form-contacto button:hover {
+    background-color: #d19a84;
+    color: #fff;
+}
+
+
+@media (max-width: 480px) {
+    .hero-banner {
+        padding: var(--espaciado-lg) var(--espaciado-md);
+        min-height: 50vh;
+    }
+
+    .hero-banner h1 {
+        font-size: 2rem;
+    }
+
+    .hero-banner p {
+        font-size: 1rem;
+    }
+
+    .detalle-contenedor {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .detalle-contenedor img {
+        width: 100%;
+        max-width: 350px;
+    }
+
+
+
+    section {
+        padding: var(--espaciado-lg) var(--espaciado-md);
+    }
+
+    section h2 {
+        font-size: 1.75rem;
+    }
+
+    footer {
+        padding: var(--espaciado-lg) var(--espaciado-md);
+    }
+}
+
+/* ANIMACIONES Y EFECTOS */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.producto-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.producto-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.producto-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.producto-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.producto-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* UTILIDADES */
+.text-center {
+    text-align: center;
+}
+
+.mb-0 {
+    margin-bottom: 0;
+}
+
+.mb-1 {
+    margin-bottom: var(--espaciado-xs);
+}
+
+.mb-2 {
+    margin-bottom: var(--espaciado-sm);
+}
+
+.mb-3 {
+    margin-bottom: var(--espaciado-md);
+}
+
+.mb-4 {
+    margin-bottom: var(--espaciado-lg);
+}
+
+.mb-5 {
+    margin-bottom: var(--espaciado-xl);
+}
+
+/* Para que el input crezca y ocupe todo el espacio posible */
+#buscador-productos {
+    flex-grow: 1;
+    /* ocupa el máximo ancho */
+}
+
+#buscador-productos input {
+    width: 100%;
+    /* para que el input ocupe todo el contenedor */
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--siena-tostado);
+    border-radius: var(--border-radius);
+    background-color: var(--alabastro-calido);
+    color: var(--gris-oscuro);
+    font-size: 1.1rem;
+    font-family: var(--fuente-principal);
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+    min-width: 0;
+    /* para evitar problemas de ancho mínimo en flex */
+}
+
+#buscador-productos input::placeholder {
+    color: var(--siena-tostado);
+    opacity: 0.7;
+}
+
+#buscador-productos input:focus {
+    outline: none;
+    border-color: var(--vara-oro);
+    box-shadow: 0 0 8px var(--vara-oro);
+    background-color: var(--blanco);
+    color: var(--gris-oscuro);
+}
+
+/* CARRITO DE COMPRAS */
+.cart-container {
+    display: flex;
+    align-items: center;
+    gap: var(--espaciado-xs);
+    position: relative;
+}
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+}
+
+
+
+/* Botón "Agregar al Carrito" */
+#btn-carrito {
+    display: block;
+    margin: 30px auto;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#btn-carrito:hover {
+    background-color: #555;
+    transform: scale(1.05);
+}
+
+#btn-carrito:active {
+    transform: scale(0.98);
+}
+
+.mensaje {
+    display: flex;
+    align-items: center;
+    padding: 12px 20px;
+    margin: 15px 0;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgb(0 0 0 / 0.1);
+    max-width: 400px;
+    animation: fadeIn 0.5s ease forwards;
+}
+
+.mensaje .icono {
+    font-size: 1.5rem;
+    margin-right: 12px;
+}
+
+.mensaje-exito {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+}
+
+.mensaje-error {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+}
+
+/* Animación simple */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

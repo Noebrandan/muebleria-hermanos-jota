@@ -1,0 +1,63 @@
+<!-- Página de Catálogo de Productos (productos.html):
+"Queremos que los clientes puedan ver todos nuestros productos en un solo lugar, de forma ordenada y atractiva. La página debe ser una grilla fácil de navegar visualmente." 
+- Mostrar todos los productos disponibles en una grilla de tarjetas.
+- La información de los productos se cargará desde un archivo JavaScript local.
+- Cada producto debe ser un enlace a su página de detalle.
+- Debe incluir un campo de búsqueda (la funcionalidad es un bonus, pero el elemento debe existir). -->
+
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../img/logo.svg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Productos</title>
+</head>
+
+<body>
+    <header>
+        <a href="../index.html"><img src="../img/logo.svg" alt="Logo de la empresa"></a>
+        <div id="buscador-productos">
+            <input type="text" id="input-busqueda" placeholder="🔎...">
+        </div>
+        <nav>
+            <a href="../index.html">Inicio</a>
+            <a href="./productos.html">Catálogo</a>
+            <a href="#footer">Medios de Contacto</a>
+            <a href="./contacto.html">Consultas</a>
+            <div class="carrito">
+                <img src="../img/carrito-de-compras.png" alt="Carrito" class="cart-icon">
+                <span id="cart-count">0</span>
+            </div>
+
+        </nav>
+    </header>
+    <section id="catalogo-productos">
+
+    </section>
+    <p id="mensaje-vacio" style="display: none;">
+        No se encontraron productos.
+    </p>
+    <footer id="footer">
+        <!-- LINKS CONTACTO: -->
+        <p>Instagram: <a
+                href="https://alt-5a31a0302d72d.blackboard.com/bbcswebdav/pid-982156-dt-content-rid-14612411_1/courses/FSD.00-43441/Instagram%20copy/index.html?one_hash=A31A00BDF54A53F0A2DB923974749C2E&f_hash=CC9E9E3D194900C1FA12077901117B48"
+                target="_blank" rel="noopener noreferrer">@hermanosjota_ba</a></p>
+
+        <p>mail general: <a href="mailto:info@hermanosjota.com.ar">info@hermanosjota.com.ar</a></p>
+
+        <p> Ventas: <a href="mailto:ventas@hermanosjota.com.ar">ventas@hermanosjota.com.ar</a></p>
+
+        <p> WhatsApp: <a href="https://wa.me/541145678900" target="_blank">+54 11 4567-8900</a></p>
+
+        <!-- COPYRIGHT -->
+        <p>© 2025 Hermanos Jota. Todos los derechos reservados.</p>
+
+    </footer>
+    <script src="../code/app.js"></script>
+</body>
+
+</html>
